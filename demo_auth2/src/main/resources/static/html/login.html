@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <script type="text/javascript" src="static/html/jquery.min.js" ></script>
+    <script type="text/javascript">
+        //获取url中的参数
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+        $(document).ready(function () {
+//            alert(1);
+//            var redirect_uri = getUrlParam("redirect_uri");
+            var appid = getUrlParam("appid");
+            var scope = getUrlParam("scope");
+//            $('#redirect_uri').val(redirect_uri);
+//            $('#appid').val(appid);
+//            $('#scope').val(scope);
+
+
+            $("#dappdi").html(appid);
+            $("#bb").html(scope);
+        })
+    </script>
+</head>
+<body>
+<div id="dappdi"></div>将要获取你的<b id="bb"></b>权限
+    <form action="/doLogin">
+        user:<input name="username" type="text" />
+        pwd:<input name="password" type="password" />
+        <input type="hidden" id="redirect_uri" name="redirect_uri">
+        <!--<input type="hidden" id="appid" name="appid">-->
+        <!--<input type="hidden" id="scope" name="scop">-->
+        <!--<input type="hidden" id="state" name="state">-->
+        <input type="submit">
+    </form>
+<hr>
+
+</body>
+</html>
