@@ -1,7 +1,6 @@
 package com.ly.shiro;
 
 
-import net.minidev.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +8,6 @@ import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.text.MessageFormat;
 
 public class CrossDomainFilter implements Filter {
 
@@ -23,12 +21,12 @@ public class CrossDomainFilter implements Filter {
                          FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse)servletResponse;
-        String log = MessageFormat.format("uri:'{'{0}'}', method:'{'{2}'}', parameters:{3}",
-                request.getRequestURI(),
-                request.getMethod(),
-                JSONObject.toJSONString(request.getParameterMap())
-        );
-        logger.info(log);
+//        String log = MessageFormat.format("uri:'{'{0}'}', method:'{'{2}'}', parameters:{3}",
+//                request.getRequestURI(),
+//                request.getMethod(),
+//                JSONObject.toJSONString(request.getParameterMap())
+//        );
+//        logger.info(log);
 
         response.addHeader("Access-Control-Allow-Credentials", "true");
         // 设置允许跨域访问的域名，* 表示任何跨域访问
