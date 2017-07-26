@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "text/plain");
+        myHeaders.append("X-Custom-Header", "ProcessThisImmediately");
+        var myInit = {
+            method: 'GET',
+            headers: myHeaders,
+            mode: 'cors',
+            cache: 'default'
+        };
+
+        function getdata() {
+            try {
+                fetch("http://localhost:9018/store/api/health", myInit);
+            }catch (e){
+                console.log(e);
+            }
+        }
+
+    </script>
+</head>
+<body>
+index
+<button onclick="getdata()">getdata</button>
+<div id="div"></div>
+</body>
+</html>
