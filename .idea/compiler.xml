@@ -23,14 +23,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="demo_auth2" />
+        <module name="j1_8_demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="demo_auth2" target="1.8" />
-      <module name="oauth2" target="1.8" />
-      <module name="oauth20" target="1.8" />
-      <module name="oauth2_0" target="1.8" />
-      <module name="some_demo" target="1.5" />
+      <module name="j1_8_demo" target="1.8" />
+      <module name="some_demo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
