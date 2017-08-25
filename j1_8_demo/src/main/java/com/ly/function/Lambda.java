@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
  */
 public class Lambda {
     public static void main(String[] args) {
-        tetst2();
+        tetst3();
     }
     public static void test1(){
         List<Integer> list = Arrays.asList(22,3,5,5,5,1,33,56);
@@ -23,6 +23,10 @@ public class Lambda {
         List<Value> collect = Arrays.asList(1, 2, 34, 55, 66, 46, 32, 75, 33).stream().map(integer -> f.apply(integer)).collect(Collectors.toList());
         collect.stream().forEach(Test::add);
         collect.forEach(value -> System.out.println(value.getV()));
+    }
+    public static void tetst3() {
+        Function<Integer, Value> f = Value::new;
+        Arrays.asList(1, 2, 34, 55, 66, 46, 32, 75, 33).stream().filter(i -> i<10).forEach(System.out::println);
     }
 
 }
