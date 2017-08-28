@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>j1_8_demo</module>
+        <module>demo_auth2</module>
     </modules>
 
     <!--<repositories>-->
