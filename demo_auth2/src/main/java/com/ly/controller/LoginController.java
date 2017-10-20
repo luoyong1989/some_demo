@@ -1,6 +1,7 @@
 package com.ly.controller;
 
 import com.ly.dto.AuthInfo;
+import com.ly.pojo.Value;
 import com.ly.service.ClientService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -8,8 +9,8 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
@@ -90,6 +91,22 @@ public class LoginController {
     public Object loginSuccess() {
         System.out.println("登陆成功");
         return "static/index.html";
+    }
+
+    @PostMapping({"/","/getData/{id}"})
+    @ResponseBody
+    public Object getData(@RequestBody Value v){
+        return "ok";
+    }
+
+    @GetMapping("getInfo")
+    @ResponseBody
+    public Object getInfo(String id){
+        return "ok";
+    }
+
+    private void test1(Value v){
+        System.out.println("v = " + v);
     }
 
 }

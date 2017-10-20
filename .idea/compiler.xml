@@ -27,8 +27,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="dangdang_job" target="1.8" />
-      <module name="ddjob" target="1.8" />
       <module name="demo_auth2" target="1.8" />
       <module name="j1_8_demo" target="1.5" />
       <module name="some_demo" target="1.5" />
